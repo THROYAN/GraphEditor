@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{053E5B57-72F4-4C55-93C0-7D5BAE8BE9D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphEditor</RootNamespace>
+    <AssemblyName>GraphEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Controllers\GraphEditController.cs" />
+    <Compile Include="App\Controllers\GraphEditFormController.cs" />
+    <Compile Include="App\Models\IArcWrapper.cs" />
+    <Compile Include="App\Models\IGraphWrapper.cs" />
+    <Compile Include="App\Models\IVertexWrapper.cs" />
+    <Compile Include="App\Models\WFArcWrapper.cs" />
+    <Compile Include="App\Models\WFGraphWrapper.cs" />
+    <Compile Include="App\Models\WFVertexWrapper.cs" />
+    <Compile Include="App\Views\ArcModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\ArcModifyForm.Designer.cs">
+      <DependentUpon>ArcModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\BiGraphConstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\BiGraphConstructorForm.Designer.cs">
+      <DependentUpon>BiGraphConstructorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\GraphConstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\GraphConstructorForm.Designer.cs">
+      <DependentUpon>GraphConstructorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\GraphEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\GraphEditForm.designer.cs">
+      <DependentUpon>GraphEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\GraphView.cs" />
+    <Compile Include="App\Views\IGraphConstructor.cs" />
+    <Compile Include="App\Views\VertexModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Views\VertexModifyForm.Designer.cs">
+      <DependentUpon>VertexModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App\Views\ArcModifyForm.resx">
+      <DependentUpon>ArcModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Views\BiGraphConstructorForm.resx">
+      <DependentUpon>BiGraphConstructorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Views\GraphConstructorForm.resx">
+      <DependentUpon>GraphConstructorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Views\GraphEditForm.resx">
+      <DependentUpon>GraphEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Views\VertexModifyForm.resx">
+      <DependentUpon>VertexModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\MagicLibrary.csproj">
+      <Project>{5A79E429-A2BC-4B1E-8DCD-B9C9173A064C}</Project>
+      <Name>MagicLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\Models\_Stuff\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

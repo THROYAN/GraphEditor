@@ -1,0 +1,75 @@
+D:\THROYAN\THROYAN projects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\THROYAN\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+D:\THROYAN\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\THROYAN\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\THROYAN\THROYAN projects\GraphEditor\obj\x86\Debug\Petri_Net_Editor.App.Views.GraphEditView.resources
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+J:\THROYAN projects\GraphEditor\bin\Debug\GraphEditor.exe
+J:\THROYAN projects\GraphEditor\bin\Debug\GraphEditor.pdb
+J:\THROYAN projects\GraphEditor\bin\Debug\Library.dll
+J:\THROYAN projects\GraphEditor\bin\Debug\Library.pdb
+D:\общие\THROYANprojects\GraphEditor\bin\Debug\GraphEditor.exe
+D:\общие\THROYANprojects\GraphEditor\bin\Debug\GraphEditor.pdb
+D:\общие\THROYANprojects\GraphEditor\bin\Debug\Library.dll
+D:\общие\THROYANprojects\GraphEditor\bin\Debug\Library.pdb
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphEditView.resources
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+D:\общие\THROYANprojects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphEditForm.resources
+\\192.168.0.3\j\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+\\192.168.0.3\j\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphConstructorForm.resources
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.VertexModifyForm.resources
+J:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.TestFormView.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.BiGraphConstructorForm.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphConstructorForm.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphEditForm.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.VertexModifyForm.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\THROYAN projects\GraphEditor\bin\Debug\GraphEditor.exe
+D:\THROYAN projects\GraphEditor\bin\Debug\GraphEditor.pdb
+D:\THROYAN projects\GraphEditor\bin\Debug\Library.dll
+D:\THROYAN projects\GraphEditor\bin\Debug\Library.pdb
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\bin\Debug\GraphEditor.exe
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\bin\Debug\GraphEditor.pdb
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\bin\Debug\Library.dll
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\bin\Debug\Library.pdb
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.BiGraphConstructorForm.resources
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphConstructorForm.resources
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphEditForm.resources
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.VertexModifyForm.resources
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+C:\Documents and Settings\Dima\Мои документы\Visual Studio 2010\Projects\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\bin\Debug\GraphEditor.exe
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\bin\Debug\GraphEditor.pdb
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\bin\Debug\Library.dll
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\bin\Debug\Library.pdb
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.BiGraphConstructorForm.resources
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphConstructorForm.resources
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.GraphEditForm.resources
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.VertexModifyForm.resources
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.Properties.Resources.resources
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
+C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.ArcModifyForm.resources
