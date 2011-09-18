@@ -293,6 +293,11 @@ namespace GraphEditor.App.Views
         }
 
         private Label debugLabel { get; set; }
+
+        public void SelectAction(GraphEditActions graphEditAction)
+        {
+            this.MainController.SetEditAction(graphEditAction);
+        }
     }
 
     [Serializable]

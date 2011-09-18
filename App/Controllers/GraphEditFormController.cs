@@ -94,7 +94,7 @@ namespace GraphEditor.App.Controllers
 
         public void SetAction(GraphEditActions graphEditAction)
         {
-            MainView.selectedGraph.action = graphEditAction;
+            MainView.selectedGraph.SelectAction(graphEditAction);
             MainView.Refresh();
         }
     }

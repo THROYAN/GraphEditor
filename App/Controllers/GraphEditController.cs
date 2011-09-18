@@ -509,5 +509,11 @@ namespace GraphEditor.App.Controllers
             geView.move = true;
             geView.MoveFrom = mCoords;
         }
+
+        public void SetEditAction(GraphEditActions graphEditAction)
+        {
+            this.geView.Control.ContextMenu = null;
+            this.geView.action = graphEditAction;
+        }
     }
 }

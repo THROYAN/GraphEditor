@@ -23,3 +23,5 @@ D:\THROYAN projects\GraphEditor\obj\x86\Release\GenerateResource.read.1.tlog
 D:\THROYAN projects\GraphEditor\obj\x86\Release\GenerateResource.write.1.tlog
 D:\THROYAN projects\GraphEditor\obj\x86\Release\GraphEditor.exe
 D:\THROYAN projects\GraphEditor\obj\x86\Release\GraphEditor.pdb
+D:\THROYAN projects\GraphEditor\bin\Release\GraphEditor.exe.config
+D:\THROYAN projects\GraphEditor\obj\x86\Release\GraphEditor.App.Views.ArcModifyForm.resources

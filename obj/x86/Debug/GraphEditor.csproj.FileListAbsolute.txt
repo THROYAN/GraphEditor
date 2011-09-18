@@ -73,3 +73,6 @@ C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\G
 C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.exe
 C:\Documents and Settings\Dima\Рабочий стол\TEMP\THROYAN's projects\GraphEditor\obj\x86\Debug\GraphEditor.pdb
 D:\THROYAN projects\GraphEditor\obj\x86\Debug\GraphEditor.App.Views.ArcModifyForm.resources
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\THROYAN projects\GraphEditor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\THROYAN projects\GraphEditor\bin\Debug\GraphEditor.exe.config
