@@ -501,6 +501,15 @@ namespace GraphEditor.App.Models
             List<PointF> ps = this.Points.ToList();
             ps.Insert(index, p);
             this.Points = ps.ToArray();
+
+            // refresh splined points
+            for (int i = 0; i < this.splinePointsIndexes.Count; i++)
+            {
+                if (this.splinePointsIndexes[i] >= index)
+                {
+                    this.splinePointsIndexes[i]++;
+                }
+            }
         }
 
         public virtual int HitPoint(float x, float y)
@@ -544,6 +553,14 @@ namespace GraphEditor.App.Models
             ps.RemoveAt(index);
             this.Points = ps.ToArray();
             this.SetNormalPoint(index);
+            // refresh splined points
+            for (int i = 0; i < this.splinePointsIndexes.Count; i++)
+            {
+                if (this.splinePointsIndexes[i] > index)
+                {
+                    this.splinePointsIndexes[i]--;
+                }
+            }
         }
 
 
