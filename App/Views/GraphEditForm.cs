@@ -39,6 +39,9 @@ namespace GraphEditor.App.Views
         {
             InitializeComponent();
             Controllers.Add(new GraphEditFormController("MainController", this));
+
+            Graphs = new List<GraphView>();
+            count = 1;
         }
 
         private void добавитьВершинуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,9 +86,10 @@ namespace GraphEditor.App.Views
 
         private void GraphEditForm_Load(object sender, EventArgs e)
         {
-            Graphs = new List<GraphView>();
-            count = 1;
-            GraphMenuEnable = false;
+            if (this.Graphs.Count == 0)
+            {
+                GraphMenuEnable = false;
+            }
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)

@@ -36,7 +36,8 @@ namespace GraphEditor.App.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VertexWrapper.Name = vertexNameTextBox.Text;
+#warning Записывается постоянно текст! и при изменении вершины учитываются дуги этой вершины
+            VertexWrapper.VertexValue = vertexNameTextBox.Text;
             float x;
             float y;
             if (!float.TryParse(xTextBox.Text, out x))

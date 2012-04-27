@@ -12,6 +12,7 @@ namespace GraphEditor.App.Models
         IGraphWrapper graphWrapper { get; set; }
         IVertex Vertex { get; set; }
         string Name { get; set; }
+        object VertexValue { get; set; }
 
         bool Hit(float x, float y);
 

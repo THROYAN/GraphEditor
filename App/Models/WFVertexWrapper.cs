@@ -31,9 +31,23 @@ namespace GraphEditor.App.Models
             }
         }
 
+
+        public object VertexValue
+        {
+            get
+            {
+                return this.vertexValue;
+            }
+            set
+            {
+                this.Vertex.Value = value;
+                this.vertexValue = value;
+            }
+        }
+
         public string Name
         {
-            get { return this.Vertex.Value as string; }
+            get { return this.Vertex.Value.ToString(); }
             set
             {
                 IVertex v = this.Vertex;

@@ -150,7 +150,7 @@ namespace GraphEditor.App.Views
             //    RefreshValues();
             //    //vm.Vertex.CopyTo(out this.GraphWrapper[verticesComboBox.SelectedIndex].Vertex);
             //}
-            this.GraphWrapper[verticesComboBox.SelectedIndex].EditVertex();
+            this.GraphWrapper.VertexWrappers[verticesComboBox.SelectedIndex].EditVertex();
             this.RefreshValues();
         }
 

@@ -39,10 +39,21 @@ namespace GraphEditor.App.Models
         public WFGraphWrapper(IGraph graph)
         {
             Graph = graph;
+
             DefaultVertexSize = new Size(20, 20);
             currentCoords = new PointF();
             VertexWrappers = new List<IVertexWrapper>();
             ArcWrappers = new List<IArcWrapper>();
+            Random r = new Random();
+
+            foreach (var item in this.Graph.GetVertices())
+            {
+                this.VertexWrappers.Add(new WFVertexWrapper(this, item) { SizeF = this.DefaultVertexSize, Coords = new PointF(r.Next(1, 500), r.Next(1, 400)) });
+            }
+            foreach (var e in this.Graph.GetEdges())
+            {
+                this.ArcWrappers.Add(new WFArcWrapper(this, e));
+            }
 
             WFGraphWrapper.SetDefaultEventHandlers(this);
         }
@@ -126,33 +137,20 @@ namespace GraphEditor.App.Models
             currentPoints = null;
         }
 
-        public WFVertexWrapper this[string name]
+        public WFVertexWrapper this[object val]
         {
             get
             {
-                return VertexWrappers.Find(v => v.Vertex.Value as string == name) as WFVertexWrapper;
+                return VertexWrappers.Find(v => v.Vertex.Value.Equals(val)) as WFVertexWrapper;
             }
         }
-        public WFVertexWrapper this[int vertexIndex]
+        
+        public WFArcWrapper this[object tail, object head]
         {
             get
             {
-                return VertexWrappers[vertexIndex] as WFVertexWrapper;
-            }
-        }
-        public WFArcWrapper this[string tail, string head]
-        {
-            get
-            {
-                return ArcWrappers.Find(e => (e as WFArcWrapper).Tail.Name == tail &&
-                                          (e as WFArcWrapper).Head.Name == head) as WFArcWrapper;
-            }
-        }
-        public WFArcWrapper this[int tailIndex, int headIndex]
-        {
-            get
-            {
-                return this[this[tailIndex].Name, this[headIndex].Name];
+                return ArcWrappers.Find(e => (e as WFArcWrapper).Tail.VertexValue.Equals(tail) &&
+                                          (e as WFArcWrapper).Head.VertexValue.Equals(head)) as WFArcWrapper;
             }
         }
 
@@ -186,7 +184,12 @@ namespace GraphEditor.App.Models
 
         public virtual void ClearMyEventHandlers()
         {
-            this.Graph.GetType().GetMethod("SetDefaultEventHandlers").Invoke(null, new object[] { this.Graph });
+            Type graphType = this.Graph.GetType();
+            while (graphType != null && graphType.GetMethod("SetDefaultEventHandlers") == null)
+            {
+                graphType = graphType.BaseType;
+            }
+            graphType.GetMethod("SetDefaultEventHandlers").Invoke(null, new object[] { this.Graph });
         }
 
         public virtual object Clone()

@@ -127,7 +127,7 @@ namespace GraphEditor.App.Controllers
 
         public virtual void AddArc(Point coords)
         {
-            geView.graphWrapper.AddArc(geView.graphWrapper[geView.selectedVertexIndex].Name, geView.graphWrapper[geView.selectionVertexIndex].Name, 1, geView.points.ToArray());
+            geView.graphWrapper.AddArc(geView.graphWrapper.VertexWrappers[geView.selectedVertexIndex].Name, geView.graphWrapper.VertexWrappers[geView.selectionVertexIndex].Name, 1, geView.points.ToArray());
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace GraphEditor.App.Controllers
         {
             if (geView.selectionVertexIndex != -1)
             {
-                geView.graphWrapper.Graph.RemoveVertex(geView.graphWrapper[geView.selectionVertexIndex].Name);
+                geView.graphWrapper.Graph.RemoveVertex(geView.graphWrapper.VertexWrappers[geView.selectionVertexIndex].Name);
                 geView.selectionVertexIndex = -1;
                 geView.Refresh();
             }
@@ -383,7 +383,7 @@ namespace GraphEditor.App.Controllers
                     else
                     {
                         
-                        geView.graphWrapper[geView.selectedVertexIndex].Center = geView.TransformationMatrix.Reverse() * mCoords;
+                        (geView.graphWrapper.VertexWrappers[geView.selectedVertexIndex] as WFVertexWrapper).Center = geView.TransformationMatrix.Reverse() * mCoords;
                         geView.Refresh();
                     }
                     break;
@@ -448,7 +448,7 @@ namespace GraphEditor.App.Controllers
 
         public void RenameSelectedVertex()
         {
-            IVertexWrapper v = geView.graphWrapper[geView.selectionVertexIndex];
+            IVertexWrapper v = geView.graphWrapper.VertexWrappers[geView.selectionVertexIndex];
             v.EditVertex();
             geView.Refresh();
             //v.Name = geView.RenameVertexForm(v.Name);

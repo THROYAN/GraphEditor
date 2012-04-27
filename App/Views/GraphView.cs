@@ -212,7 +212,7 @@ namespace GraphEditor.App.Views
             #region Вывод куска дуги при добавлении
             if (selectedVertexIndex != -1 && points != null && points.Count > 0)
             {
-                WeightedArc wArc = new WeightedArc(graphWrapper.Graph, graphWrapper[selectedVertexIndex].Name, null, 1);
+                WeightedArc wArc = new WeightedArc(graphWrapper.Graph, graphWrapper.VertexWrappers[selectedVertexIndex].Name, null, 1);
                 WFArcWrapper arc = new WFArcWrapper(graphWrapper, wArc) { Points = points.ToArray() };
                 arc.Draw(e.Graphics, Pens.Gray);
             }
@@ -223,10 +223,10 @@ namespace GraphEditor.App.Views
                 //    Pens.Green,
                 //    graphWrapper[selectionVertexIndex].SelectionRectangle
                 //);
-                e.Graphics.DrawRectangle(Pens.Green, graphWrapper[selectionVertexIndex].SelectionRectangle);
+                e.Graphics.DrawRectangle(Pens.Green, (graphWrapper.VertexWrappers[selectionVertexIndex] as WFVertexWrapper).SelectionRectangle);
 
             if (selectedVertexIndex != -1)
-                graphWrapper[selectedVertexIndex].Draw(e.Graphics, Pens.Green);
+                (graphWrapper.VertexWrappers[selectedVertexIndex] as WFVertexWrapper).Draw(e.Graphics, Pens.Green);
 
             if (selectionArcIndex != -1)
             {

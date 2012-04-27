@@ -58,7 +58,16 @@ namespace GraphEditor.App.Models
 
         public virtual string Text
         {
-            get { return this.Weight.ToString(); }
+            get
+            {
+                var m = this.graphWrapper.Graph.GetType().GetMethod("GetArcFlow", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+                double? f = null;
+                if (m != null)
+                {
+                    f = m.Invoke(this.graphWrapper.Graph, new[] { this.Edge }) as double?;
+                }
+                return f == null ? this.Weight.ToString() : String.Format("{0}/{1}", f, this.Weight);
+            }
         }
 
         public double Weight
@@ -104,8 +113,8 @@ namespace GraphEditor.App.Models
 
             return new RectangleF(
                             new PointF(
-                                tail.X + (head.X - tail.X) / 2 - s.Width / 2,
-                                tail.Y + (head.Y - tail.Y) / 2 - s.Height / 2
+                                tail.X + (head.X - tail.X) / 3 - s.Width / 2,
+                                tail.Y + (head.Y - tail.Y) / 3 - s.Height / 2
                                 ),
                                 s
                             );
