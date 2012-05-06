@@ -131,9 +131,21 @@ namespace GraphEditor.App.Models
         {
             currentPoints = points;
             if (Graph is WeightedGraph)
+            {
                 (Graph as WeightedGraph).AddArc(tailName, headName, weight);
-            if (Graph is WeightedBiGraph)
-                (Graph as WeightedBiGraph).AddArc(tailName, headName, weight);
+
+            }
+            else
+            {
+                if (Graph is WeightedBiGraph)
+                {
+                    (Graph as WeightedBiGraph).AddArc(tailName, headName, weight);
+                }
+                else
+                {
+                    Graph.AddEdge(tailName, headName);
+                }
+            }
             currentPoints = null;
         }
 
@@ -171,13 +183,19 @@ namespace GraphEditor.App.Models
             graphWrapper.ArcWrappers = new List<IArcWrapper>(this.ArcWrappers);
             graphWrapper.VertexWrappers = new List<IVertexWrapper>(this.VertexWrappers);
 
-            graphWrapper.ArcWrappers.ForEach(a => a.graphWrapper = graphWrapper);
+            this.Graph.CopyTo(graphWrapper.Graph);
+
             graphWrapper.VertexWrappers.ForEach(v => v.graphWrapper = graphWrapper);
+
+            foreach (var arcWrapper in graphWrapper.ArcWrappers)
+            {
+                arcWrapper.Edge = graphWrapper.Graph[arcWrapper.Edge.Vertices[0].Value, arcWrapper.Edge.Vertices[1].Value];
+                arcWrapper.graphWrapper = graphWrapper;
+            }
 
             (graphWrapper as WFGraphWrapper).counter = this.counter;
             (graphWrapper as WFGraphWrapper).DefaultVertexSize = new Size(this.DefaultVertexSize.Width, this.DefaultVertexSize.Height);
-            //graphWrapper.Graph = this.Graph.Clone() as IGraph;
-            this.Graph.CopyTo(graphWrapper.Graph);
+            
 
             WFGraphWrapper.SetDefaultEventHandlers(graphWrapper as WFGraphWrapper);
         }
