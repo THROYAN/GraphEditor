@@ -111,20 +111,6 @@ namespace GraphEditor.App.Models
                 throw new Exception( "Invalid argument - vertex or graphWrapper. Method - WFVertexWrapper.constructor(IGraphWrapper,IVertex)" );
         }
 
-        //public WFVertexWrapper(IGraphWrapper graphWrapper, string name)
-        //{
-        //    Vertex = new Vertex(graphWrapper.Graph, name);
-        //    Coords = new PointF();
-        //    Size = new Size();
-        //}
-
-        //public WFVertexWrapper(IGraphWrapper graphWrapper, string name, PointF coords)
-        //{
-        //    Vertex = new Vertex(graphWrapper.Graph, name);
-        //    Coords = coords;
-        //    Size = new Size();
-        //}
-
         public virtual void Draw(Graphics g, Pen p)
         {
             RectangleF r = RectangleF;
@@ -136,11 +122,14 @@ namespace GraphEditor.App.Models
                             p,
                             r
                          );
+            Font f = new Font("Arial", 8);
+            var s = g.MeasureString(this.Name, f);
+
             g.DrawString(
                 Name,
-                new Font("Arial", 8),
+                f,
                 Brushes.Blue,
-                r.Right,
+                r.Left - s.Width,
                 r.Bottom
             );
         }
