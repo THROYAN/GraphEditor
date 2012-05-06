@@ -584,12 +584,12 @@ namespace GraphEditor.App.Models
         }
 
 
-        public object Clone()
+        public virtual object Clone()
         {
             return new WFArcWrapper(this.graphWrapper, this.Edge) { Points = this.Points, splinePointsIndexes = this.splinePointsIndexes };
         }
 
-        public void CopyTo(IArcWrapper arcWrapper)
+        public virtual void CopyTo(IArcWrapper arcWrapper)
         {
             arcWrapper.graphWrapper = this.graphWrapper;
             (arcWrapper as WFArcWrapper).vertices = this.vertices;
