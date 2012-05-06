@@ -26,7 +26,7 @@ namespace GraphEditor.App.Views
         /// Переменная, указывающая на действие, выбранное пользователем.
         /// В зависимости от значения этой переменной будут выполняться соответсвующие методы при нажатии и движении мыши.
         /// </summary>
-        public GraphEditActions action;
+        public GraphEditAction action;
 
         /// <summary>
         /// Индекс вершины, на которую пользователь навёл мышью.
@@ -80,6 +80,7 @@ namespace GraphEditor.App.Views
             #region Классное включение двойной буфферизации =))
                 Control.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(Control, true, null);
             #endregion
+                Control.Dock = DockStyle.Fill;
 
             Controllers.Add(new GraphEditController(this, "MainController"));
             MainController.ViewLoad();
@@ -113,6 +114,8 @@ namespace GraphEditor.App.Views
             Control.MouseDown += new MouseEventHandler(Control_MouseDown);
             Control.MouseUp += new MouseEventHandler(Control_MouseUp);
 
+            Control.BackColor = Color.White;
+            
             Control parent = Control.Parent;
             while(parent != null && parent.Focus())
             {
@@ -212,7 +215,7 @@ namespace GraphEditor.App.Views
             #region Вывод куска дуги при добавлении
             if (selectedVertexIndex != -1 && points != null && points.Count > 0)
             {
-                WeightedArc wArc = new WeightedArc(graphWrapper.Graph, graphWrapper.VertexWrappers[selectedVertexIndex].Name, null, 1);
+                Arc wArc = new Arc(graphWrapper.Graph, graphWrapper.VertexWrappers[selectedVertexIndex].Name, null);
                 WFArcWrapper arc = new WFArcWrapper(graphWrapper, wArc) { Points = points.ToArray() };
                 arc.Draw(e.Graphics, Pens.Gray);
             }
@@ -294,12 +297,12 @@ namespace GraphEditor.App.Views
 
         private Label debugLabel { get; set; }
 
-        public void SelectAction(GraphEditActions graphEditAction)
+        public void SelectAction(GraphEditAction graphEditAction)
         {
             this.MainController.SetEditAction(graphEditAction);
         }
     }
 
     [Serializable]
-    public enum GraphEditActions { AddVertex, AddArcSelectFirstVertex, AddArcSelectSecondVertex, RemoveArc, RemoveVertex, ChangeArcWeight, SomethingElse, Edit }
+    public enum GraphEditAction { AddVertex, AddArcSelectFirstVertex, AddArcSelectSecondVertex, RemoveArc, RemoveVertex, ChangeArcWeight, SomethingElse, Edit }
 }

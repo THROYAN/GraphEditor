@@ -23,6 +23,7 @@ namespace GraphEditor.App.Views
         private int _tabsHeight;
         public int count { get; set; }
 
+        public Dictionary<RadioButton, GraphEditAction> radioGroup { get; set; }
 
         [NonSerialized]
         public List<GraphView> Graphs;
@@ -41,32 +42,41 @@ namespace GraphEditor.App.Views
             Controllers.Add(new GraphEditFormController("MainController", this));
 
             Graphs = new List<GraphView>();
+            this.radioGroup = new Dictionary<RadioButton,GraphEditAction>()
+                {
+                    { this.addVertexRadioButton, GraphEditAction.AddVertex },
+                    { this.addArcRadioButton, GraphEditAction.AddArcSelectFirstVertex },
+                    { this.removeArcRadioButton, GraphEditAction.RemoveArc },
+                    { this.removeVertexRadioButton, GraphEditAction.RemoveVertex },
+                    { this.moveRadioButton, GraphEditAction.Edit },
+                    { this.changeWeightRadioButton, GraphEditAction.ChangeArcWeight },
+                };
             count = 1;
         }
 
         private void добавитьВершинуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.AddVertex);
+            MainController.SetAction(GraphEditAction.AddVertex);
         }
 
         private void добавитьДугуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.AddArcSelectFirstVertex);
+            MainController.SetAction(GraphEditAction.AddArcSelectFirstVertex);
         }
 
         private void удалитьВершинуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.RemoveVertex);
+            MainController.SetAction(GraphEditAction.RemoveVertex);
         }
 
         private void удалитьДугуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.RemoveArc);
+            MainController.SetAction(GraphEditAction.RemoveArc);
         }
 
         private void изменитьВесToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.ChangeArcWeight);
+            MainController.SetAction(GraphEditAction.ChangeArcWeight);
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,12 +121,16 @@ namespace GraphEditor.App.Views
                 добавлениеToolStripMenuItem.Enabled = value;
                 конструкторToolStripMenuItem.Enabled = value;
                 panel1.Enabled = value;
+                splitContainer1.Enabled = value;
+                splitContainer2.Enabled = value;
+                splitContainer3.Enabled = value;
+                splitContainer4.Enabled = value;
             }
         }
 
         private void свободноеПеремещениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainController.SetAction(GraphEditActions.Edit);
+            MainController.SetAction(GraphEditAction.Edit);
         }
 
         private void конструкторToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,5 +170,10 @@ namespace GraphEditor.App.Views
         }
 
         public string newGraphName = "Новый граф";
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            MainController.SelectRadioButton(sender as RadioButton);
+        }
     }
 }

@@ -31,13 +31,13 @@ namespace GraphEditor.App.Controllers
         {
             geView.graphWrapper = new WFGraphWrapper( new MagicLibrary.MathUtils.Graphs.WeightedBiGraph() );
             geView.points = new List<PointF>();
-            geView.action = GraphEditActions.AddVertex;
+            geView.action = GraphEditAction.AddVertex;
             geView.selectedVertexIndex = -1;
             geView.selectionVertexIndex = -1;
             geView.selectionArcIndex = -1;
             geView.selectionArcPointIndex = -1;
             geView.selectedArcPointIndex = -1;
-            geView.action = GraphEditActions.Edit;
+            geView.action = GraphEditAction.Edit;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace GraphEditor.App.Controllers
         {
             if (geView.selectionVertexIndex == -1)
             {
-                this.AddVertex(coords);
+                this._addVertex(coords);
 
                 SizeF newS = new SizeF(geView.Control.ClientSize.Width,geView.Control.ClientSize.Height);
 
@@ -77,9 +77,14 @@ namespace GraphEditor.App.Controllers
             geView.selectionVertexIndex = -1;
         }
 
+        public void _addVertex(PointF coords)
+        {
+            this.AddVertex(geView.TransformationMatrix.Reverse() * coords);
+        }
+
         public virtual void AddVertex(PointF coords)
         {
-            geView.graphWrapper.AddVertex(geView.TransformationMatrix.Reverse() * coords);
+            geView.graphWrapper.AddVertex(coords);
         }
 
         /// <summary>
@@ -116,7 +121,7 @@ namespace GraphEditor.App.Controllers
                 this.AddArc(coords);
 
                 geView.points.Clear();
-                geView.action = GraphEditActions.AddArcSelectFirstVertex;
+                geView.action = GraphEditAction.AddArcSelectFirstVertex;
                 geView.selectedVertexIndex = -1;
             }
             else if (geView.selectedVertexIndex != -1)
@@ -139,7 +144,7 @@ namespace GraphEditor.App.Controllers
             if (geView.selectionVertexIndex != -1)
             {
                 geView.selectedVertexIndex = geView.selectionVertexIndex;
-                geView.action = GraphEditActions.AddArcSelectSecondVertex;
+                geView.action = GraphEditAction.AddArcSelectSecondVertex;
             }
         }
 
@@ -184,7 +189,7 @@ namespace GraphEditor.App.Controllers
         {
             switch (geView.action)
             {
-                case GraphEditActions.Edit:
+                case GraphEditAction.Edit:
                     //If the vertex wasn't selected,
                     if (geView.selectedVertexIndex == -1)
                     {
@@ -214,25 +219,25 @@ namespace GraphEditor.App.Controllers
                     else
                         geView.selectedVertexIndex = -1;
                     break;
-                case GraphEditActions.AddVertex:
+                case GraphEditAction.AddVertex:
                     AddVertexIfSelected(coords);
                     break;
-                case GraphEditActions.AddArcSelectFirstVertex:
+                case GraphEditAction.AddArcSelectFirstVertex:
                     SelectFirstVertex();
                     break;
-                case GraphEditActions.AddArcSelectSecondVertex:
+                case GraphEditAction.AddArcSelectSecondVertex:
                     AddArcAction(coords);
                     break;
-                case GraphEditActions.RemoveVertex:
+                case GraphEditAction.RemoveVertex:
                     RemoveSelectedVertex();
                     break;
-                case GraphEditActions.RemoveArc:
+                case GraphEditAction.RemoveArc:
                     RemoveSelectedArc(coords);
                     break;
-                case GraphEditActions.ChangeArcWeight:
+                case GraphEditAction.ChangeArcWeight:
                     SetArcWeight(coords);
                     break;
-                case GraphEditActions.SomethingElse:
+                case GraphEditAction.SomethingElse:
                     DoSomethingElse(coords);
                     break;
             }
@@ -321,7 +326,7 @@ namespace GraphEditor.App.Controllers
             geView.mCoords = mCoords;
             switch (geView.action)
             {
-                case GraphEditActions.Edit:
+                case GraphEditAction.Edit:
                     // Если пользователь не перемещает вершину
                     if (geView.selectedVertexIndex == -1)
                     {
@@ -387,11 +392,11 @@ namespace GraphEditor.App.Controllers
                         geView.Refresh();
                     }
                     break;
-                case GraphEditActions.RemoveVertex:
-                case GraphEditActions.AddArcSelectFirstVertex:
+                case GraphEditAction.RemoveVertex:
+                case GraphEditAction.AddArcSelectFirstVertex:
                     SelectVertex(mCoords);
                     break;
-                case GraphEditActions.AddArcSelectSecondVertex:
+                case GraphEditAction.AddArcSelectSecondVertex:
                     SelectVertex(mCoords);
                     if (geView.points == null)
                     {
@@ -407,14 +412,15 @@ namespace GraphEditor.App.Controllers
                         geView.Refresh();
                     }
                     break;
-                case GraphEditActions.AddVertex:
+                case GraphEditAction.AddVertex:
                     geView.selectionVertexIndex = GetSelectedVertexIndex(mCoords);
+                    geView.Refresh();
                     break;
-                case GraphEditActions.RemoveArc:
-                case GraphEditActions.ChangeArcWeight:
+                case GraphEditAction.RemoveArc:
+                case GraphEditAction.ChangeArcWeight:
                     SelectArc(mCoords);
                     break;
-                case GraphEditActions.SomethingElse:
+                case GraphEditAction.SomethingElse:
                     DoSomethingElseDinamic(mCoords);
                     break;
             }
@@ -510,7 +516,7 @@ namespace GraphEditor.App.Controllers
             geView.MoveFrom = mCoords;
         }
 
-        public void SetEditAction(GraphEditActions graphEditAction)
+        public void SetEditAction(GraphEditAction graphEditAction)
         {
             this.geView.Control.ContextMenu = null;
             this.geView.action = graphEditAction;

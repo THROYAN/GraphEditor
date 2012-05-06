@@ -63,12 +63,6 @@
     <Compile Include="App\Views\BiGraphConstructorForm.Designer.cs">
       <DependentUpon>BiGraphConstructorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="App\Views\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="App\Views\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="App\Views\GraphConstructorForm.cs">
       <SubType>Form</SubType>
     </Compile>

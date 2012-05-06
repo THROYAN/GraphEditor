@@ -42,6 +42,7 @@
             // 
             // tailComboBox
             // 
+            this.tailComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tailComboBox.FormattingEnabled = true;
             this.tailComboBox.Location = new System.Drawing.Point(12, 36);
             this.tailComboBox.Name = "tailComboBox";
@@ -50,6 +51,7 @@
             // 
             // headComboBox
             // 
+            this.headComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.headComboBox.FormattingEnabled = true;
             this.headComboBox.Location = new System.Drawing.Point(147, 36);
             this.headComboBox.Name = "headComboBox";

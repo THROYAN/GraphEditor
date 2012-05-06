@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 using MagicLibrary.MVC;
 using GraphEditor.App.Views;
+using System.IO;
 
 namespace GraphEditor.App.Controllers
 {
@@ -21,9 +22,31 @@ namespace GraphEditor.App.Controllers
 
         public void SaveAction()
         {
-            MainView.saveFileDialog1.FileName = MainView.selectedGraph.Control.Text;
+            MainView.saveFileDialog1.FileName = MainView.tabControl1.SelectedTab.Text;
             if (MainView.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
                 MainView.selectedGraph.MainController.SaveGraph(MainView.saveFileDialog1.FileName);
+                FileInfo fInfo = new FileInfo(MainView.saveFileDialog1.FileName);
+                MainView.tabControl1.SelectedTab.Text = fInfo.Name;
+            }
+        }
+
+        public void SelectRadioButton(RadioButton r)
+        {
+            if (!r.Checked)
+            {
+                return;
+            }
+
+            foreach (var rb in this.MainView.radioGroup)
+            {
+                if (r == rb.Key)
+                {
+                    this.SetAction(rb.Value);
+                    continue;
+                }
+                rb.Key.Checked = false;
+            }
         }
 
         public void OpenAction()
@@ -92,7 +115,7 @@ namespace GraphEditor.App.Controllers
                 MainView.GraphMenuEnable = false;
         }
 
-        public void SetAction(GraphEditActions graphEditAction)
+        public void SetAction(GraphEditAction graphEditAction)
         {
             MainView.selectedGraph.SelectAction(graphEditAction);
             MainView.Refresh();
